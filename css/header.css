@@ -1,0 +1,38 @@
+header {
+    position: absolute;
+    width: 100vw;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav ul a {
+    text-decoration: none;
+    color: #ff6123;
+    transition: .3s;
+}
+
+.nav ul a:hover {
+    color: #facf9f;
+}
+
+a.github {
+    text-decoration: none;
+    color: #ff6123;
+    font-size: 25px;
+    transition: .3s;
+}
+
+a.github:hover {
+    color: #facf9f;
+}
