@@ -49,6 +49,6 @@ input#inputsearch:focus {
     top: 50%;
     transform: translateY(-50%);
     font-size: 18px;
-    color: #777;
+    color: #191b1d;
     cursor: pointer;
 }

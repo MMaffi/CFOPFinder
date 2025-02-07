@@ -1,6 +1,6 @@
 header {
     position: absolute;
-    width: 100vw;
+    width: 100%;
 }
 
 .content {
@@ -26,13 +26,23 @@ header {
     color: #facf9f;
 }
 
-a.github {
-    text-decoration: none;
-    color: #ff6123;
-    font-size: 25px;
-    transition: .3s;
+.nav p {
+    color: #facf9f;
 }
 
-a.github:hover {
-    color: #facf9f;
+button.menu {
+    padding: 5px;
+    border-radius: 15px;
+    font-size: 15px;
+    cursor: pointer;
+    width: 70px;
+    border: solid 1px #facf9f;
+    color: #191b1d;
+    background-color: #ff6123;
+    transition: all 0.3s ease;
+}
+
+button.menu:hover {
+    background-color: #facf9f;
+    border: solid 1px #ff6123;
 }

@@ -1,0 +1,31 @@
+footer {
+    background-color: black;
+    width: 100%;
+}
+
+.footercontent {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 2px inset black;
+    align-items: center;
+    padding: 20px;
+    height: 15vh;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.562);
+}
+
+ul.utilities {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+ul a {
+    text-decoration: none;
+    color: #ff6123;
+    transition: .3s;
+}
+
+ul a:hover {
+    color: #facf9f;
+}

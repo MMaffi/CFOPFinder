@@ -1,0 +1,68 @@
+.menumodal {
+    position: fixed;
+    width: 250px;
+    height: auto;
+    background-color: #ccc;
+    right: -99999px;
+    top: 52px;
+    padding: 20px 10px;
+    border-radius: 5px;
+    transition: .1s ease-in-out;
+    z-index: 1000;
+}
+
+div.line {
+    padding: 10px 0;
+    border-bottom: 2px solid rgb(165, 165, 165);
+    width: calc(100% + 20px);
+    margin: 0 -10px;
+}
+
+ul.utilitieslist {
+    list-style: none;
+}
+
+ul.utilitieslist li {
+    font-size: 20px;
+}
+
+ul.utilitieslist li a {
+    text-decoration: none;
+    color: black;
+    transition: .2s;
+}
+
+ul.utilitieslist li a:hover {
+    color: rgb(66, 66, 66);
+}
+
+ul.linkslist {
+    list-style: none;
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+ul.linkslist li {
+    font-size: 12px;
+}
+
+ul.linkslist li a {
+    text-decoration: none;
+    color: rgb(66, 66, 66);
+}
+
+ul.linkslist li a:hover {
+    color: black; 
+}
+
+div.options {
+    padding-top: 20px;
+    display: flex;
+    justify-content: end;
+}
+
+div.options p {
+    font-size: 11px;
+}
