@@ -1,31 +1,50 @@
 footer {
-    background-color: black;
+    position: fixed;
+    bottom: 0;
     width: 100%;
 }
 
-.footercontent {
+div.subtitles {
+    width: 100%; 
+    overflow: hidden;
     display: flex;
-    justify-content: space-between;
-    box-shadow: 2px inset black;
-    align-items: center;
-    padding: 20px;
-    height: 15vh;
-    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.562);
+    padding: 5px 0;
+    position: relative;
+    text-align: center;
 }
 
-ul.utilities {
-    list-style: none;
+div.scroll-content {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    white-space: nowrap;
+    width: max-content;
+    animation: 30s slide infinite linear;
 }
 
-ul a {
-    text-decoration: none;
-    color: #ff6123;
-    transition: .3s;
-}
-
-ul a:hover {
+div.scroll-content p {
+    font-size: 10px;
+    margin-right: 0;
+    padding-right: 150px;
     color: #facf9f;
+}
+
+div.scroll-content p span {
+    color: #ff6123;
+}
+
+div.title {
+    padding-left: 10px;
+}
+
+div.title p {
+    font-size: 14px;
+    color: #ff6123;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }

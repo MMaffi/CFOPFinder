@@ -23,7 +23,7 @@ main {
 
 .input-container {
     position: relative;
-    width: 35vw;
+    width: 50vw;
 }
 
 input#inputsearch {
@@ -43,6 +43,10 @@ input#inputsearch:focus {
     border-color: #ff6123;
 }
 
+input#inputsearch:not(:focus) {
+    animation: pulse 2s infinite;
+}
+
 .input-container i {
     position: absolute;
     right: 12px;
@@ -51,4 +55,16 @@ input#inputsearch:focus {
     font-size: 18px;
     color: #191b1d;
     cursor: pointer;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 97, 35, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 15px 10px rgba(255, 97, 35, 0.5); 
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 97, 35, 0);
+    }
 }

@@ -39,7 +39,7 @@ button.menu {
     border: solid 1px #facf9f;
     color: #191b1d;
     background-color: #ff6123;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
 }
 
 button.menu:hover {

@@ -1,0 +1,90 @@
+.input-container {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-container.active {
+    transform: translateY(-200px);
+}
+
+/* Estilizando a barra de rolagem */
+#results::-webkit-scrollbar {
+    width: 8px;
+}
+
+#results::-webkit-scrollbar-track {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+#results::-webkit-scrollbar-thumb {
+    background-color: #ff6123;
+    border-radius: 20px;
+    border: 2px solid #facf9f;
+}
+
+#results::-webkit-scrollbar-thumb:hover {
+    background-color: #ff6123;
+}
+
+/* Estilo dos itens da lista de resultados */
+.result-item {
+    padding: 12px;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+    transition: background 0.3s, padding-left 0.3s ease-in-out;
+    font-size: 14px;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-item:hover {
+    background-color: #facf9f;
+    padding-left: 16px;
+    transition: .3s;
+}
+
+/* Tornando a lista de resultados mais bonita */
+#results {
+    width: 50vw;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 5px;
+    max-height: 400px;
+    overflow-y: auto;
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para a mensagem "Sem resultados encontrados" */
+.no-results {
+    padding: 12px;
+    color: #7f8c8d;
+    font-size: 14px;
+    text-align: center;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
