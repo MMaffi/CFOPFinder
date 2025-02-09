@@ -37,15 +37,26 @@
                     </div>
                 </div>
                 <div class="content">
-                    <form action="https://formsubmit.co/mm.maffi@outlook.com" method="POST">
-                        <input type="text" name="Name" required autocomplete="off">
-                        <input type="email" name="Email" required autocomplete="off">
-                        <input type="hidden" name="_next" value="https://youtube.com">
+                    <form class="form" action="https://formsubmit.co/mm.maffi@outlook.com" method="POST" enctype="multipart/form-data">
+                        <label for="name">Nome:</label>
+                        <input type="text" name="name" id="name" required autocomplete="off" placeholder="Seu Nome!">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" required autocomplete="off" placeholder="Seu Email!">
+                        <label for="message">Mensagem:</label>
+                        <textarea name="message" id="message" placeholder="Descreva os bugs aqui!" required autocomplete="off"></textarea>
+                        <label for="file" class="label-file">Envie uma Imagem</label>
+                        <input type="file" name="attachment" id="file" class="input-file" accept="image/png, image/jpeg">
+                        <p id="file-name" class="file-name">Nenhum arquivo selecionado</p>
+                        <input type="hidden" name="_next" value="http://127.0.0.1:5500/html/thankyoupage.html">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_subject" value="Novo Bug Feedback! - CFOP Finder">
                         <button type="submit">Enviar</button>
                    </form>
                 </div>
             </div> 
         </div>
     </main>
+
+    <script src="/javascript/bugreports.js"></script>
 </body>
 </html>
