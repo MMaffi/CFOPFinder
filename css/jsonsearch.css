@@ -20,6 +20,14 @@
     transform: translateY(-200px);
 }
 
+.maincontent h2 {
+    transition: all 0.3s ease-in-out;
+}
+
+.maincontent h2.active {
+    transform: translateY(-200px);
+}
+    
 /* Estilizando a barra de rolagem */
 #results::-webkit-scrollbar {
     width: 8px;

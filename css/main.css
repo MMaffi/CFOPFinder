@@ -13,6 +13,11 @@ main {
     align-items: center;
 }
 
+.maincontent h2 {
+    color: #ff6123;
+    font-size: 30px;
+}
+
 .search {
     display: flex;
     justify-content: center;

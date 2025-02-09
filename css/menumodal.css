@@ -70,3 +70,13 @@ div.options {
 div.options p {
     font-size: 11px;
 }
+
+div.copyright {
+    margin-bottom: -18px;
+}
+
+div.copyright p {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 10px;
+}
