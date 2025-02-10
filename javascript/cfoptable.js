@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const tabela = document.querySelector("tbody")
 
     // Busca os dados do arquivo JSON
-    fetch("/json/data.json")
+    fetch("../json/data.json")
         .then(response => response.json()) // Converte a resposta para JSON
         .then(data => {
             // Itera sobre os itens do JSON e adiciona à tabela
