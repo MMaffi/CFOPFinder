@@ -64,11 +64,36 @@ ul.linkslist li a:hover {
 div.options {
     padding-top: 20px;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
 }
 
 div.options p {
     font-size: 11px;
+    margin-top: 6px;
+}
+
+div.options select {
+    width: 100px;
+    background-color: #c5c5c5;
+    color: #191b1d;
+    border: 2px solid #ff6123;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    text-align: center;
+    padding: 2px;
+}
+
+div.options select:hover {
+    background-color: #c5c5c5;
+    color: #191b1d;
+    border: 2px solid #ff6123;
+}
+
+div.options select:focus {
+    box-shadow: 0 0 5px #ff6123;
 }
 
 div.copyright {
