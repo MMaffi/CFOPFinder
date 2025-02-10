@@ -39,8 +39,8 @@ function searchJson() {
 
     // Filter JSON
     const filteredData = jsonData.filter(item =>
-        item.CFOP.startsWith(searchValue) || 
-        item["Descricao"].toLowerCase().startsWith(searchValue)
+        item.CFOP.includes(searchValue) || 
+        item["Descricao"].toLowerCase().includes(searchValue)
     );
 
     if (filteredData.length === 0) {
