@@ -25,7 +25,7 @@ header a:hover {
 main {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(45deg, #facf9f, #f39c12, #facf9f);
+    background: linear-gradient(45deg, #ccc, #464646, #ccc);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,6 +42,24 @@ main {
     border-top: solid 25px #ff6123;
     position: relative;
     padding: 20px;
+}
+
+.container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.container::-webkit-scrollbar-track {
+    background-color: #ff6123;
+    border-radius: 0 0 10px 0;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: #facf9f;
+    border-radius: 20px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+    background-color: antiquewhite;
 }
 
 .container-content {

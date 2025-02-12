@@ -70,6 +70,7 @@ div.options {
 div.options p {
     font-size: 11px;
     margin-top: 6px;
+    cursor: default;
 }
 
 div.options select {
@@ -104,4 +105,5 @@ div.copyright p {
     padding-top: 20px;
     text-align: center;
     font-size: 10px;
+    cursor: default;
 }

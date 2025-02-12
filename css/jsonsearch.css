@@ -17,18 +17,18 @@
 }
 
 .input-container.active {
-    transform: translateY(-200px);
+    transform: translateY(-20vh);
 }
 
 .maincontent h2 {
     transition: all 0.3s ease-in-out;
+    font-size: 3vw;
 }
 
 .maincontent h2.active {
-    transform: translateY(-200px);
+    transform: translateY(-20vh);
 }
     
-/* Estilizando a barra de rolagem */
 #results::-webkit-scrollbar {
     width: 8px;
 }
@@ -48,7 +48,6 @@
     background-color: #ff6123;
 }
 
-/* Estilo dos itens da lista de resultados */
 .result-item {
     padding: 12px;
     border-bottom: 1px solid black;
@@ -67,7 +66,6 @@
     transition: .3s;
 }
 
-/* Tornando a lista de resultados mais bonita */
 #results {
     width: 50vw;
     background-color: #ccc;
@@ -86,7 +84,6 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para a mensagem "Sem resultados encontrados" */
 .no-results {
     padding: 12px;
     color: #7f8c8d;
