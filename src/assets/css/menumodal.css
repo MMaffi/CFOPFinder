@@ -106,7 +106,3 @@ div.copyright p {
     font-size: 10px;
     cursor: default;
 }
-
-.not-select {
-    user-select: none;    
-}
