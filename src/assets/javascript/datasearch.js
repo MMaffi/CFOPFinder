@@ -1,4 +1,4 @@
-const dataUrl = './assets/json/data.json'
+const dataUrl = '../json/data.json'
 let jsonData = []
 
 // Load JSON data
