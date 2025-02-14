@@ -16,6 +16,7 @@ main {
 .maincontent h2 {
     color: #ff6123;
     font-size: 30px;
+    user-select: none;
 }
 
 .search {
@@ -42,6 +43,10 @@ input#inputsearch {
     text-align: left;
     outline: none;
     transition: .3s;
+}
+
+input#inputsearch::placeholder {
+    user-select: none;
 }
 
 input#inputsearch:focus {
