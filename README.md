@@ -1,36 +1,36 @@
 # CFOP Finder
 
-O **CFOP Finder** é uma plataforma criada com o objetivo de **simplificar a busca por Códigos Fiscais de Operações e Prestações (CFOP)**. Com essa ferramenta, empresas, contadores e profissionais da área fiscal podem encontrar rapidamente os códigos necessários, facilitando o processo de preenchimento de documentos fiscais e evitando erros.
+The **CFOP Finder** is a platform created with the goal of **simplifying the search for Fiscal Operation and Service Codes (CFOP)**. With this tool, companies, accountants, and tax professionals can quickly find the necessary codes, making it easier to fill out tax documents and avoid errors.
 
-## 🚀 Objetivo
+## 🚀 Objective
 
-A busca por CFOPs pode ser um desafio para empresas e contadores, especialmente quando se trata de identificar rapidamente o código correto. O **CFOP Finder** oferece uma interface intuitiva e eficiente para ajudar a resolver esse problema, economizando tempo e garantindo precisão nas operações fiscais.
+Searching for CFOPs can be a challenge for companies and accountants, especially when it comes to quickly identifying the correct code. The **CFOP Finder** offers an intuitive and efficient interface to help solve this problem, saving time and ensuring accuracy in tax operations.
 
-## 💡 Funcionalidades
+## 💡 Features
 
-- **Busca Rápida**: Encontre o código CFOP desejado em segundos.
-- **Interface Simples**: Design intuitivo, ideal para usuários de qualquer nível.
-- **Categorias**: Organize os CFOPs por categorias para facilitar a localização.
-- **Acessibilidade**: A plataforma pode ser utilizada por qualquer profissional da área fiscal, desde pequenos empresários até grandes contadores.
+- **Quick Search**: Find the desired CFOP code in seconds.
+- **Simple Interface**: Intuitive design, ideal for users of any level.
+- **Categories**: Organize CFOPs by categories for easier navigation.
+- **Accessibility**: The platform can be used by any tax professional, from small business owners to large-scale accountants.
 
-## 🛠 Tecnologias Utilizadas
+## 🛠 Technologies Used
 
-- **HTML**: Estruturação da página web.
-- **CSS**: Estilo e layout responsivo.
-- **JavaScript**: Funcionalidades dinâmicas de busca.
-- **JSON**: Armazenamento e organização dos dados de CFOP.
+- **HTML**: Web page structure.
+- **CSS**: Responsive style and layout.
+- **JavaScript**: Dynamic search functionalities.
+- **JSON**: Storage and organization of CFOP data.
 
-## 📄 Como Usar
+## 📄 How to Use
 
-1. **Acesse o site** (ou abra o arquivo `index.html` no navegador).
-2. **Digite o nome ou número do CFOP** na barra de busca.
-3. **Veja os resultados**: O sistema retornará o CFOP correspondente com detalhes.
+1. **Access the website** (or open the `index.html` file in your browser).
+2. **Enter the CFOP name or number** in the search bar.
+3. **View the results**: The system will return the corresponding CFOP with details.
 
-## 🧑‍💻 Contribuindo
+## 🧑‍💻 Contributing
 
-Sinta-se à vontade para contribuir com melhorias! Você pode:
+Feel free to contribute with improvements! You can:
 
-- **Reportar bugs** e **dar sugestões** na aba de **"Bug Reports"** dentro do menu.
-- **Entrar em contato** através da opção **"Contato"** também disponível dentro do **menu**.
+- **Report bugs** and **give suggestions** in the **"Bug Reports"** tab within the menu.
+- **Get in touch** through the **"Contact"** option also available in the **menu**.
 
-Estamos sempre abertos a melhorias e feedbacks para tornar o CFOP Finder ainda mais útil!
+We are always open to improvements and feedback to make CFOP Finder even more useful!
