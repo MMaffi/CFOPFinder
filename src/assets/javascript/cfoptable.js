@@ -97,6 +97,7 @@ function addOverlay() {
     overlay.style.height = "100%"
     overlay.style.backgroundColor = "rgba(0, 0, 0, 0.7)"
     overlay.style.zIndex = "999"
+    overlay.style.cursor = "url('../image/cursors/cursor.cur'), pointer"
     document.body.appendChild(overlay)
 }
 
