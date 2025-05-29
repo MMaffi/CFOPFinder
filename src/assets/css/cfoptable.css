@@ -10,6 +10,20 @@ div.title {
     color: #ff6123;
 }
 
+div.downloadtable {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+div.downloadtable a {
+    text-decoration: none;
+    display: flex;
+    gap: 5px;
+    color: #e08d55;
+    cursor: pointer;
+}
+
 div.table {
     background-color: #ffe3c2;
     width: 80vw;
