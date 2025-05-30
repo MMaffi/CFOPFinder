@@ -1,27 +1,76 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const tabela = document.querySelector("tbody")
+let originalData = []
 
-    // Busca os dados do arquivo JSON
+document.addEventListener("DOMContentLoaded", function () {
+    const tableBody = document.querySelector("tbody")
+
+    // Load JSON data and render full table
     fetch("../json/data.json")
         .then(response => response.json())
         .then(data => {
-            data.forEach(item => {
-                const row = document.createElement("tr")
-
-                row.innerHTML = `
-                    <td>${item.CFOP}</td>
-                    <td>${item.Descricao}</td>
-                `
-
-                tabela.appendChild(row)
-            });
-
-            addRowSelection();
+            originalData = data
+            renderTable(originalData)
         })
-        .catch(error => console.error("Erro ao carregar os dados:", error))
-});
+        .catch(error => console.error("Error loading data:", error))
 
-// Function to enable row selection
+    // Add event listeners for filter selects to auto-update table
+    document.getElementById("filtertabletype").addEventListener("change", applyFilters)
+    document.getElementById("filtertablestate").addEventListener("change", applyFilters)
+})
+
+// Render the table rows based on passed data
+function renderTable(data) {
+    const tableBody = document.querySelector("tbody")
+    tableBody.innerHTML = ""
+
+    data.forEach(item => {
+        const row = document.createElement("tr")
+
+        row.innerHTML = `
+            <td>${item.CFOP}</td>
+            <td>${item.Descricao}</td>
+        `
+
+        tableBody.appendChild(row)
+    })
+
+    addRowSelection()
+}
+
+// Filter data according to selected filters and render table
+function applyFilters() {
+    const operationType = document.getElementById("filtertabletype").value
+    const operationDestination = document.getElementById("filtertablestate").value
+
+    const filteredData = originalData.filter(item => {
+        const cfop = item.CFOP.toString()
+
+        let typeMatch = false
+        if (operationType === "alloperation") {
+            typeMatch = true
+        } else if (operationType === "inbound") {
+            typeMatch = ["1", "2", "3"].includes(cfop.charAt(0))
+        } else if (operationType === "outbound") {
+            typeMatch = ["5", "6", "7"].includes(cfop.charAt(0))
+        }
+
+        let destinationMatch = false
+        if (operationDestination === "allstate") {
+            destinationMatch = true
+        } else if (operationDestination === "intra") {
+            destinationMatch = ["1", "5"].includes(cfop.charAt(0))
+        } else if (operationDestination === "inter") {
+            destinationMatch = ["2", "6"].includes(cfop.charAt(0))
+        } else if (operationDestination === "foreing") {  // You may want to fix this spelling to 'foreign'
+            destinationMatch = ["3", "7"].includes(cfop.charAt(0))
+        }
+
+        return typeMatch && destinationMatch
+    })
+
+    renderTable(filteredData)
+}
+
+// Enable row selection with zoom effect and overlay
 function addRowSelection() {
     const rows = document.querySelectorAll("tbody tr")
 
@@ -29,7 +78,6 @@ function addRowSelection() {
         row.addEventListener("click", function (event) {
             event.stopPropagation()
 
-            // Check if the row is already selected
             if (this.classList.contains("selected")) {
                 this.classList.remove("selected")
                 removeOverlay()
@@ -38,10 +86,10 @@ function addRowSelection() {
                 rows.forEach(r => r.classList.remove("selected"))
                 this.classList.add("selected")
                 zoomRow(this)
-                addOverlay(this)
+                addOverlay()
             }
-        });
-    });
+        })
+    })
 
     document.addEventListener("click", function () {
         const selectedRow = document.querySelector("tbody tr.selected")
@@ -50,36 +98,36 @@ function addRowSelection() {
             removeOverlay()
             resetZoomedRow()
         }
-    });
+    })
 }
 
-// Function to enlarge the clicked row
+// Clone and enlarge clicked row
 function zoomRow(row) {
-    const rowClone = row.cloneNode(true)
-    rowClone.id = "zoomed-row"
-    rowClone.style.position = "fixed"
-    rowClone.style.top = "50%"
-    rowClone.style.left = "50%"
-    rowClone.style.transform = "translate(-50%, -50%) scale(1.5)"
-    rowClone.style.transition = "transform 0.3s ease"
-    rowClone.style.zIndex = "1000"
-    rowClone.style.backgroundColor = "#ffffff"
-    rowClone.style.boxShadow = "0px 0px 15px rgba(0, 0, 0, 0.3)"
+    const zoomedRow = row.cloneNode(true)
+    zoomedRow.id = "zoomed-row"
+    zoomedRow.style.position = "fixed"
+    zoomedRow.style.top = "50%"
+    zoomedRow.style.left = "50%"
+    zoomedRow.style.transform = "translate(-50%, -50%) scale(1.5)"
+    zoomedRow.style.transition = "transform 0.3s ease"
+    zoomedRow.style.zIndex = "1000"
+    zoomedRow.style.backgroundColor = "#ffffff"
+    zoomedRow.style.boxShadow = "0px 0px 15px rgba(0, 0, 0, 0.3)"
 
-    document.body.appendChild(rowClone)
+    document.body.appendChild(zoomedRow)
 
-    rowClone.addEventListener("click", function(event) {
-        event.stopPropagation();
-    });
+    zoomedRow.addEventListener("click", function(event) {
+        event.stopPropagation()
+    })
 
     document.addEventListener("click", function (event) {
-        if (!rowClone.contains(event.target)) {
-            resetZoomedRow();
+        if (!zoomedRow.contains(event.target)) {
+            resetZoomedRow()
         }
-    }, { once: true });
+    }, { once: true })
 }
 
-// Function to remove the expanded row
+// Remove the enlarged zoomed row
 function resetZoomedRow() {
     const zoomedRow = document.getElementById("zoomed-row")
     if (zoomedRow) {
@@ -87,6 +135,7 @@ function resetZoomedRow() {
     }
 }
 
+// Add dark overlay behind zoomed row
 function addOverlay() {
     const overlay = document.createElement("div")
     overlay.id = "overlay"
@@ -101,6 +150,7 @@ function addOverlay() {
     document.body.appendChild(overlay)
 }
 
+// Remove the overlay
 function removeOverlay() {
     const overlay = document.getElementById("overlay")
     if (overlay) {
@@ -108,17 +158,17 @@ function removeOverlay() {
     }
 }
 
-// Script to Top Scroll Button
-const scrollToTopBtn = document.getElementById("scrollToTopBtn")
+// Scroll to top button logic
+const scrollToTopButton = document.getElementById("scrollToTopBtn")
 
 window.onscroll = function () {
     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        scrollToTopBtn.style.display = "block"
+        scrollToTopButton.style.display = "block"
     } else {
-        scrollToTopBtn.style.display = "none"
+        scrollToTopButton.style.display = "none"
     }
 }
 
-scrollToTopBtn.addEventListener("click", function () {
+scrollToTopButton.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" })
 })
