@@ -18,6 +18,26 @@
     <div class="title">
         <h1>Tabela CFOP</h1>
     </div>
+    <div class="filterbutton">
+        <button>Abre</button>
+    </div>
+    <div class="filtermodal">
+        <div class="filtertable">
+            <label for="filtertabletype">Tipo de Operação</label>
+            <select name="filtertabletype" id="filtertabletype">
+                <option value="alloperation" selected>Todos</option>
+                <option value="inbound">Entrada</option>
+                <option value="outbound">Saída</option>
+            </select>
+            <label for="filtertablestate">Destino da Operação</label>
+            <select name="filtertablestate" id="filtertablestate">
+                <option value="allstate" selected>Todos</option>
+                <option value="intra">Intraestadual</option>
+                <option value="inter">Interestadual</option>
+                <option value="foreing">Exterior</option>
+            </select>
+        </div>
+    </div>
     <div class="downloadtable">
         <a href="../downloads/tabelacfop.csv" download>    
             <i class="bi bi-download"></i>
