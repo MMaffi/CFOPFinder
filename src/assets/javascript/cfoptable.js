@@ -28,9 +28,38 @@ function renderTable(data) {
         row.innerHTML = `
             <td>${item.CFOP}</td>
             <td>${item.Descricao}</td>
+            <td>
+                <button class="copy-btn" data-cfop="${item.CFOP}" data-description="${item.Descricao}" title="Copiar linha">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </td>
         `
 
         tableBody.appendChild(row)
+
+        const copyBtn = row.querySelector(".copy-btn")
+        const icon = copyBtn.querySelector("i")
+
+        copyBtn.addEventListener("click", function (event) {
+            event.stopPropagation()
+
+            const textToCopy = `${item.CFOP} - ${item.Descricao}`
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => {
+                    
+                    icon.classList.remove("bi-clipboard")
+                    icon.classList.add("bi-clipboard-check")
+
+                    
+                    setTimeout(() => {
+                        icon.classList.remove("bi-clipboard-check")
+                        icon.classList.add("bi-clipboard")
+                    }, 2000)
+                })
+                .catch(err => {
+                    console.error("Erro ao copiar:", err)
+                })
+        })
     })
 
     addRowSelection()
@@ -116,7 +145,30 @@ function zoomRow(row) {
 
     document.body.appendChild(zoomedRow)
 
-    zoomedRow.addEventListener("click", function(event) {
+    const copyBtn = zoomedRow.querySelector(".copy-btn")
+    if (copyBtn) {
+        const icon = copyBtn.querySelector("i")
+        const cfop = copyBtn.getAttribute("data-cfop")
+        const description = copyBtn.getAttribute("data-description")
+
+        copyBtn.addEventListener("click", function (event) {
+            event.stopPropagation()
+
+            const textToCopy = `${cfop} - ${description}`
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => {
+                    icon.classList.remove("bi-clipboard")
+                    icon.classList.add("bi-clipboard-check")
+                    setTimeout(() => {
+                        icon.classList.remove("bi-clipboard-check")
+                        icon.classList.add("bi-clipboard")
+                    }, 1500)
+                })
+                .catch(err => console.error("Erro ao copiar (zoom):", err))
+        })
+    }
+
+    zoomedRow.addEventListener("click", function (event) {
         event.stopPropagation()
     })
 
