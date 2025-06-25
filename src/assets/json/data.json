@@ -197,7 +197,7 @@
     },
     {
         "CFOP": "1403",
-        "Descricao": "Compra para comercialização em opeoperação com mercadoria sujeita a ST"
+        "Descricao": "Compra para comercialização em operação com mercadoria sujeita a ST"
     },
     {
         "CFOP": "1406",
@@ -213,7 +213,7 @@
     },
     {
         "CFOP": "1409",
-        "Descricao": "Transferência para comercialização em opeoperação com mercadoria sujeita a ST"
+        "Descricao": "Transferência para comercialização em operação com mercadoria sujeita a ST"
     },
     {
         "CFOP": "1410",
@@ -221,7 +221,7 @@
     },
     {
         "CFOP": "1411",
-        "Descricao": "Devolução de venda de mercadoria adquirida ou recebida de terceiros em opeoperação com mercadoria sujeita a ST"
+        "Descricao": "Devolução de venda de mercadoria adquirida ou recebida de terceiros em operação com mercadoria sujeita a ST"
     },
     {
         "CFOP": "1414",
@@ -229,7 +229,7 @@
     },
     {
         "CFOP": "1415",
-        "Descricao": "Retorno de mercadoria adquirida ou recebida de terceiros, remetida para venda fora do estabelecimento em opeoperação com mercadoria sujeita a ST"
+        "Descricao": "Retorno de mercadoria adquirida ou recebida de terceiros, remetida para venda fora do estabelecimento em operação com mercadoria sujeita a ST"
     },
     {
         "CFOP": "1451",
@@ -665,7 +665,7 @@
     },
     {
         "CFOP": "2403",
-        "Descricao": "Compra para comercialização em opeoperação com mercadoria sujeita a ST"
+        "Descricao": "Compra para comercialização em operação com mercadoria sujeita a ST"
     },
     {
         "CFOP": "2406",
@@ -681,7 +681,7 @@
     },
     {
         "CFOP": "2409",
-        "Descricao": "Transferência para comercialização em opeoperação com mercadoria sujeita a ST"
+        "Descricao": "Transferência para comercialização em operação com mercadoria sujeita a ST"
     },
     {
         "CFOP": "2410",
@@ -689,7 +689,7 @@
     },
     {
         "CFOP": "2411",
-        "Descricao": "Devolução de venda de mercadoria adquirida ou recebida de terceiros em opeoperação com mercadoria sujeita a ST"
+        "Descricao": "Devolução de venda de mercadoria adquirida ou recebida de terceiros em operação com mercadoria sujeita a ST"
     },
     {
         "CFOP": "2414",
@@ -697,7 +697,7 @@
     },
     {
         "CFOP": "2415",
-        "Descricao": "Retorno de mercadoria adquirida ou recebida de terceiros, remetida para venda fora do estabelecimento em opeoperação com mercadoria sujeita a ST"
+        "Descricao": "Retorno de mercadoria adquirida ou recebida de terceiros, remetida para venda fora do estabelecimento em operação com mercadoria sujeita a ST"
     },
     {
         "CFOP": "2501",
@@ -1297,7 +1297,7 @@
     },
     {
         "CFOP": "5409",
-        "Descricao": "Transferência de mercadoria adquirida ou recebida de terceiros em opeoperação com mercadoria sujeita a ST"
+        "Descricao": "Transferência de mercadoria adquirida ou recebida de terceiros em operação com mercadoria sujeita a ST"
     },
     {
         "CFOP": "5410",
@@ -1305,15 +1305,15 @@
     },
     {
         "CFOP": "5411",
-        "Descricao": "Devolução de compra para comercialização em opeoperação com mercadoria sujeita a ST"
+        "Descricao": "Devolução de compra para comercialização em operação com mercadoria sujeita a ST"
     },
     {
         "CFOP": "5412",
-        "Descricao": "Devolução de bem do ativo imobilizado, em opeoperação com mercadoria sujeita a ST"
+        "Descricao": "Devolução de bem do ativo imobilizado, em operação com mercadoria sujeita a ST"
     },
     {
         "CFOP": "5413",
-        "Descricao": "Devolução de mercadoria destinada ao uso ou consumo, em opeoperação com mercadoria sujeita a ST."
+        "Descricao": "Devolução de mercadoria destinada ao uso ou consumo, em operação com mercadoria sujeita a ST."
     },
     {
         "CFOP": "5414",
@@ -1321,7 +1321,7 @@
     },
     {
         "CFOP": "5415",
-        "Descricao": "Remessa de mercadoria adquirida ou recebida de terceiros para venda fora do estabelecimento, em opeoperação com mercadoria sujeita a ST"
+        "Descricao": "Remessa de mercadoria adquirida ou recebida de terceiros para venda fora do estabelecimento, em operação com mercadoria sujeita a ST"
     },
     {
         "CFOP": "5451",
@@ -1857,7 +1857,7 @@
     },
     {
         "CFOP": "6403",
-        "Descricao": "Venda de mercadoria adquirida ou recebida de terceiros em opeoperação com mercadoria sujeita a ST, na condição de contribuinte substituto"
+        "Descricao": "Venda de mercadoria adquirida ou recebida de terceiros em operação com mercadoria sujeita a ST, na condição de contribuinte substituto"
     },
     {
         "CFOP": "6404",
@@ -1877,15 +1877,15 @@
     },
     {
         "CFOP": "6411",
-        "Descricao": "Devolução de compra para comercialização em opeoperação com mercadoria sujeita a ST"
+        "Descricao": "Devolução de compra para comercialização em operação com mercadoria sujeita a ST"
     },
     {
         "CFOP": "6412",
-        "Descricao": "Devolução de bem do ativo imobilizado, em opeoperação com mercadoria sujeita a ST"
+        "Descricao": "Devolução de bem do ativo imobilizado, em operação com mercadoria sujeita a ST"
     },
     {
         "CFOP": "6413",
-        "Descricao": "Devolução de mercadoria destinada ao uso ou consumo, em opeoperação com mercadoria sujeita a ST"
+        "Descricao": "Devolução de mercadoria destinada ao uso ou consumo, em operação com mercadoria sujeita a ST"
     },
     {
         "CFOP": "6414",
