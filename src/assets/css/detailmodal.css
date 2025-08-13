@@ -1,0 +1,93 @@
+/* Fundo escuro */
+.cfop-modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(25, 27, 29, 0.75); /* tom escuro */
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Conteúdo do modal */
+.cfop-modal-content {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 14px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0px 6px 25px rgba(0,0,0,0.25);
+    animation: fadeInScale 0.3s ease;
+    position: relative;
+    border: 2px solid #facf9f; /* cor suave */
+}
+
+/* Botão fechar */
+.cfop-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #666;
+    transition: 0.2s;
+}
+.cfop-modal-close:hover {
+    color: #ff6123;
+}
+
+/* Título do CFOP */
+#modalCfop {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff6123;
+    margin-bottom: 10px;
+}
+
+/* Descrição */
+#modalDescricao {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.4em;
+}
+
+/* Botão copiar */
+#copyCfopBtn {
+    background: #ff6123;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.2s;
+}
+#copyCfopBtn:hover {
+    background: #e4551e;
+    transform: scale(1.03);
+}
+#copyCfopBtn i {
+    font-size: 16px;
+}
+
+/* Animação de entrada */
+@keyframes fadeInScale {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
