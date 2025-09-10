@@ -1,20 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CFOP Finder</title>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Page Icon -->
-         <link rel="shortcut icon" href="./src/assets/image/background.png" type="image/x-icon">
+    <title>Página Não Encontrada | CFOP Finder</title>
 
-        <!-- CSS links -->
-         <link rel="stylesheet" href="./src/assets/css/404.css">
-         <link rel="stylesheet" href="./src/assets/css/basicreset.css">
-    </head>
-    <body>
-        <h1>404</h1>
-        <h2>Ops! Parece que a página não foi encontrada.</h2>
-        <p><a href="./index.html">Voltar</a></p>
-    </body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+
+    <link rel="shortcut icon" href="./src/assets/image/NCMFinder_logo.png" type="image/x-icon">
+
+	<link rel="stylesheet" href="./src/assets/css/404.css">
+	<link rel="stylesheet" href="./src/assets/css/variables.css">
+	<link rel="stylesheet" href="./src/assets/css/scrollbar.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo-container">
+                    <h1><i class="fas fa-search-dollar"></i> CFOP Finder</h1>
+                    <p class="description">Sistema avançado de busca de códigos CFOP com descrições completas</p>
+                </div>
+            </div>
+        </header>
+        
+        <main class="error-container">
+            <div class="error-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">Página Não Encontrada</h2>
+            <p class="error-message">
+                Desculpe, a página que você está procurando não foi encontrada. 
+                Ela pode ter sido movida, renomeada ou não existe mais.
+            </p>
+            <div class="action-buttons">
+                <a href="index.html" class="primary-btn">
+                    <i class="fas fa-home"></i> Voltar para a Página Inicial
+                </a>
+                <a href="javascript:history.back()" class="secondary-btn">
+                    <i class="fas fa-arrow-left"></i> Voltar para a Página Anterior
+                </a>
+            </div>
+        </main>
+    </div>
+</body>
 </html>

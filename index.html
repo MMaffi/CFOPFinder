@@ -1,169 +1,202 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Encontre códigos CFOP (Código Fiscal de Operações e Prestações) com descrições completas">
+    <meta name="keywords" content="CFOP, código CFOP, código fiscal, operações fiscais, impostos">
+
     <title>CFOP Finder</title>
 
-    <!-- Page Icon -->
-    <link rel="shortcut icon" href="./src/assets/image/background.png" type="image/x-icon">
+	<link rel="shortcut icon" href="./src/assets/image/background.png" type="image/x-icon">
 
-    <!-- CSS Links -->
-    <link rel="stylesheet" href="./src/assets/css/basicreset.css">
-    <link rel="stylesheet" href="./src/assets/css/menumodal.css">
-    <link rel="stylesheet" href="./src/assets/css/header.css">
-    <link rel="stylesheet" href="./src/assets/css/main.css">
-    <link rel="stylesheet" href="./src/assets/css/footer.css">
-    <link rel="stylesheet" href="./src/assets/css/jsonsearch.css">
-    <link rel="stylesheet" href="./src/assets/css/versionmodal.css">
-    <link rel="stylesheet" href="./src/assets/css/updatemodal.css">
-    <link rel="stylesheet" href="./src/assets/css/detailmodal.css">
+	<!-- External Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
 
-
-    <!-- Link icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+	<!-- CSS Links -->
+	<link rel="stylesheet" href="./src/assets/css/variables.css">
+	<link rel="stylesheet" href="./src/assets/css/style.css">
+	<link rel="stylesheet" href="./src/assets/css/modalstyle.css">
+	<link rel="stylesheet" href="./src/assets/css/search.css">
+	<link rel="stylesheet" href="./src/assets/css/theme.css">
+	<link rel="stylesheet" href="./src/assets/css/scrollbar.css">
 </head>
 <body>
-    <header>
-        
-        <div class="content">
-            <div class="nav">
-                <ul>
-                    <li><a href="">CFOP Finder</a></li> 
-                    <p>|</p>
-                    <li><a href="./src/assets/pages/cfoptable.html" target="_blank">Tabela CFOP ➚</a></li>
-                </ul>
-            </div>
-            <button class="menu" id="btnmenu">Menu</button>
-        </div>
-        
-    </header>
-    <main>
-        
-        <!-- Modals -->
-        <div class="menumodal" id="menumodal">
-            <div class="menucontent">
-                <div class="utilities">
-                    <ul class="utilitieslist">
-                        <li class="autor"><a href="https://github.com/MMAffi" target="_blank">Desenvolvedores</a></li>
-                    </ul>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo-container">
+                    <h1><i class="fas fa-file-invoice-dollar"></i> CFOP Finder</h1>
+                    <p class="description">Sistema avançado de busca de códigos CFOP com descrições completas</p>
                 </div>
-                <div class="line"></div>
-                <div class="links">
-                    <ul class="linkslist">
-                        <li><a href="./src/assets/pages/about.html">Sobre o CFOP Finder</a></li>
-                        <li><span>|</span></li>
-                        <li><a href="./src/assets/pages/bugreports.html">Bug Reports</a></li>
-                        <li><span>|</span></li>
-                        <li><a href="./src/assets/pages/contact.html">Contato</a></li>
-                        <li><span>|</span></li>
-                    </ul>
-                </div>
-                <div class="line"></div>
-                <div class="options">
-                    <select name="language" id="language">
-                        <option value="Tradução">Tradução</option>
-                        <option value="Em Breve">Em Breve...</option>
-                    </select>
-                    <p class="not-select" id="btnversionmodal">Versão: 1.2.5</p>
-                </div>
-                <div class="copyright">
-                    <p>&copy; 2025 MMaffi. Todos os direitos reservados.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="backmodals" id="backmodals">
-            <div class="versionmodal" id="versionmodal">
-                <div class="vmodaltitle">
-                    <h2>Detalhes da Versão</h2>
-                    <i class="bi bi-x-lg" id="btnclosevmodal"></i>
-                </div>
-                <div class="vmodalcontent">
-                    <div class="updates">
-                        <h3>Novidades:</h3> 
-                        <p>- Foi adicionado cursor estilizado para a Tabela CFOP.</p>
-                        <p>- Foi adicionado opção para fazer download em .csv da Tabela CFOP.</p>
-                        <p>- Foi adicionado a opção de filtros na Tabela CFOP.</p>
-                        <p>- Agora é possível copiar o CFOP que você deseja na Tabela CFOP.</p>
+                <div class="header-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalCfops">0</span>
+                        <span class="stat-label">Códigos CFOP</span>
                     </div>
-                    <div class="datelastupdate">
-                        <div class="year">Ano: <span>2025</span></div>
-                        <div class="month">Mês: <span>05</span></div>
-                        <div class="day">Dia: <span>30</span></div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="lastUpdate">-</span>
+                        <span class="stat-label">Atualizado em</span>
+                    </div>
+                </div>
+				<div class="theme-toggle-container">
+					<button id="themeToggle" class="theme-toggle" title="Alternar modo escuro/claro">
+						<i class="fas fa-moon"></i>
+					</button>
+				</div>
+            </div>
+        </header>
+        
+        <div class="search-container">
+            <div class="search-box">
+                <div class="search-input-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchInput" placeholder="Digite o código CFOP ou descrição..." autocomplete="off">
+                    <button id="clearSearch" class="clear-btn" title="Limpar busca">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <button id="searchButton" class="primary-btn">
+                    <i class="fas fa-search"></i> Buscar
+                </button>
+                <button id="advancedSearchToggle" class="secondary-btn" title="Busca avançada">
+                    <i class="fas fa-sliders-h"></i>
+                </button>
+            </div>
+            
+            <div class="advanced-search-container" id="advancedSearchContainer">
+                <div class="filter-section">
+                    <h3>Opções de Busca</h3>
+                    <div class="filter-options">
+                        <label class="radio-label">
+                            <input type="radio" name="searchType" value="all" checked>
+                            <span class="radio-custom"></span>
+                            Buscar em toda a descrição
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="searchType" value="start">
+                            <span class="radio-custom"></span>
+                            Buscar no início da descrição
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="searchType" value="code">
+                            <span class="radio-custom"></span>
+                            Buscar apenas por código
+                        </label>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Modal de Detalhes CFOP -->
-        <div id="cfopModal" class="cfop-modal">
-            <div class="cfop-modal-content">
-                <span class="cfop-modal-close" id="closeCfopModal">&times;</span>
-                <h2 id="modalCfop"></h2>
-                <p id="modalDescricao"></p>
-                <button id="copyCfopBtn">
-                    <i class="bi bi-clipboard"></i> Copiar
+            
+            <div class="search-info" id="searchInfo">
+                <div><span id="resultCount">10</span> resultados encontrados</div>
+                <button id="exportResults" class="text-btn">
+                    <i class="fas fa-download"></i> Exportar resultados
                 </button>
             </div>
         </div>
-        <!-- End Modals -->
-
-        <div class="interface">
-            <div class="maincontent">
-                <h2>CFOP Finder</h2>
-                <div class="input-container">
-                    <input type="text" id="inputsearch" placeholder="Buscar CFOP..." autocomplete="off">
-                    <i class="bi bi-search"></i>
-                    <ul id="results"></ul>
-                </div>                
+        
+        <div class="results-container">
+            <div class="results-header">
+                <div class="col-code">Código CFOP</div>
+                <div class="col-desc">Descrição</div>
+                <div class="col-actions">Ações</div>
+            </div>
+            <div id="results"></div>
+            <div class="loading-results" id="loadingResults">
+                <div class="spinner"></div>
+                <span>Carregando mais resultados...</span>
             </div>
         </div>
+        
         <footer>
-            <div class="title">
-                <p class="title">Grupo CFOP:</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>CFOP Finder</h4>
+                    <p>Sistema de consulta de códigos CFOP para classificação fiscal de operações</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li>Busca avançada</li>
+                        <li>Informações completas</li>
+                        <li>Exportação de dados</li>
+                    </ul>
+                </div>
+				<div class="footer-section">
+					<h4>Outros Sistemas</h4>
+					<ul>
+						<li><a href="https://mmaffi.github.io/NCMFinder" target="_blank">NCM Finder</a></li>
+					</ul>
+				</div>
+                <div class="footer-section">
+                    <h4>Ajuda</h4>
+                    <ul>
+                        <li><a href="#" id="openHelp">Como usar</a></li>
+                        <li><a href="#" id="openAbout">Sobre</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="subtitles">
-                <div class="scroll-content">
-                    <p>1000 <span>&nbsp;-&nbsp;</span> ENTRADAS OU AQUISIÇÕES DE SERVIÇOS DO ESTADO</p>
-                    <p>2000 <span>&nbsp;-&nbsp;</span> ENTRADAS OU AQUISIÇÕES DE SERVIÇOS DE OUTROS ESTADOS</p>
-                    <p>3000 <span>&nbsp;-&nbsp;</span> ENTRADAS OU AQUISIÇÕES DE SERVIÇOS DO EXTERIOR</p>
-                    <p>5000 <span>&nbsp;-&nbsp;</span> SAÍDAS OU PRESTAÇÕES DE SERVIÇOS PARA O ESTADO</p>
-                    <p>6000 <span>&nbsp;-&nbsp;</span> SAÍDAS OU PRESTAÇÕES DE SERVIÇOS PARA OUTROS ESTADOS</p>
-                    <p>7000 <span>&nbsp;-&nbsp;</span> SAÍDAS OU PRESTAÇÕES DE SERVIÇOS PARA O EXTERIOR</p>
-                </div>
-                <div class="scroll-content">
-                    <p>1000 <span>&nbsp;-&nbsp;</span> ENTRADAS OU AQUISIÇÕES DE SERVIÇOS DO ESTADO</p>
-                    <p>2000 <span>&nbsp;-&nbsp;</span> ENTRADAS OU AQUISIÇÕES DE SERVIÇOS DE OUTROS ESTADOS</p>
-                    <p>3000 <span>&nbsp;-&nbsp;</span> ENTRADAS OU AQUISIÇÕES DE SERVIÇOS DO EXTERIOR</p>
-                    <p>5000 <span>&nbsp;-&nbsp;</span> SAÍDAS OU PRESTAÇÕES DE SERVIÇOS PARA O ESTADO</p>
-                    <p>6000 <span>&nbsp;-&nbsp;</span> SAÍDAS OU PRESTAÇÕES DE SERVIÇOS PARA OUTROS ESTADOS</p>
-                    <p>7000 <span>&nbsp;-&nbsp;</span> SAÍDAS OU PRESTAÇÕES DE SERVIÇOS PARA O EXTERIOR</p>
-                </div>
-                <div class="scroll-content">
-                    <p>1000 <span>&nbsp;-&nbsp;</span> ENTRADAS OU AQUISIÇÕES DE SERVIÇOS DO ESTADO</p>
-                    <p>2000 <span>&nbsp;-&nbsp;</span> ENTRADAS OU AQUISIÇÕES DE SERVIÇOS DE OUTROS ESTADOS</p>
-                    <p>3000 <span>&nbsp;-&nbsp;</span> ENTRADAS OU AQUISIÇÕES DE SERVIÇOS DO EXTERIOR</p>
-                    <p>5000 <span>&nbsp;-&nbsp;</span> SAÍDAS OU PRESTAÇÕES DE SERVIÇOS PARA O ESTADO</p>
-                    <p>6000 <span>&nbsp;-&nbsp;</span> SAÍDAS OU PRESTAÇÕES DE SERVIÇOS PARA OUTROS ESTADOS</p>
-                    <p>7000 <span>&nbsp;-&nbsp;</span> SAÍDAS OU PRESTAÇÕES DE SERVIÇOS PARA O EXTERIOR</p>
-                </div>
+            <div class="footer-bottom">
+                <p>© 2025 CFOPFinder. Todos os direitos reservados</p>
+                <p>v1.0.0.1009.25</p>
             </div>
         </footer>
-    </main>
+    </div>
 
-    <div class="updatealert" id="updatealert">
-        <div class="alertcontent">
-            <h2>Aviso Importante</h2>
-            <p>⚠️ O CFOP Finder vai mudar em breve! Fique atento às próximas atualizações.</p>
-            <button id="closealert">Ok, entendi</button>
+    <!-- Modal para detalhes do CFOP -->
+    <div id="cfopModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Detalhes do CFOP</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Conteúdo será preenchido via JavaScript -->
+            </div>
         </div>
     </div>
 
-    <script src="./src/assets/javascript/openmenu.js"></script>
-    <script src="./src/assets/javascript/datasearch.js"></script>
-    <script src="./src/assets/javascript/versionmodal.js"></script>
-    <script src="./src/assets/javascript/updatemodal.js"></script>
+    <!-- Modal de Ajuda -->
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Como usar o CFOP Finder</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="help-section">
+                    <h3><i class="fas fa-search"></i> Busca Básica</h3>
+                    <p>Digite qualquer termo relacionado à operação fiscal ou código CFOP no campo de busca.</p>
+                </div>
+                <div class="help-section">
+                    <h3><i class="fas fa-sliders-h"></i> Busca Avançada</h3>
+                    <p>Use as opções de filtro para refinar sua busca por tipo de pesquisa.</p>
+                </div>
+                <div class="help-section">
+                    <h3><i class="fas fa-download"></i> Exportação</h3>
+                    <p>Exporte os resultados da busca para CSV para usar em seus sistemas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast de notificação -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle toast-icon"></i>
+            <span class="toast-message">Operação realizada com sucesso!</span>
+        </div>
+    </div>
+
+    <button id="backToTop" title="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+	<script src="./src/assets/javascript/script.js"></script>
+	<script src="./src/assets/javascript/formatfunction.js"></script>
+	<script src="./src/assets/javascript/toast.js"></script>
+	<script src="./src/assets/javascript/darkmode.js"></script>
+	<script src="./src/assets/javascript/copycode.js"></script>
 </body>
 </html>
