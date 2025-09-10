@@ -130,7 +130,7 @@ document.getElementById('inputsearch').addEventListener('keydown', (e) => {
     }
 });
 
-window.onload = async function () {
+window.addEventListener("load", async function () {
     await loadJson();
     document.getElementById('inputsearch').addEventListener('input', searchJson);
-};
+});

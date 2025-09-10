@@ -1,7 +1,9 @@
-window.onload = function() {
-    document.getElementById("updatealert").style.display = "flex";
+window.addEventListener("load", function () {
+    const updateAlert = document.getElementById("updatealert");
+    const closeAlert = document.getElementById("closealert");
 
-    document.getElementById("closealert").onclick = function() {
-      document.getElementById("updatealert").style.display = "none";
+    if (updateAlert && closeAlert) {
+        updateAlert.style.display = "flex";
+        closeAlert.onclick = () => updateAlert.style.display = "none";
     }
-}
+});
