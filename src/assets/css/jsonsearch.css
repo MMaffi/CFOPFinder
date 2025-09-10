@@ -68,12 +68,12 @@
 
 #results {
     width: 50vw;
+    max-height: 40vh;
     background-color: #ccc;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-top: 5px;
     padding: 5px;
-    max-height: 400px;
     overflow-y: auto;
     display: none;
     position: absolute;
