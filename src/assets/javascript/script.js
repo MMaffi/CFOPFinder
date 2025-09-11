@@ -5,7 +5,7 @@ let filteredResults = [];
 let showingSearch = false;
 let isLoading = false;
 
-// Elementos da DOM
+// Elementos DOM
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
 const clearSearch = document.getElementById('clearSearch');

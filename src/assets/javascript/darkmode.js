@@ -42,7 +42,6 @@ themeToggle.addEventListener('click', toggleTheme);
 
 // Verificar mudanças na preferência do sistema
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    // Só mudar se não houver preferência salva
     if (!localStorage.getItem('theme')) {
         if (e.matches) {
             document.documentElement.setAttribute('data-theme', 'dark');

@@ -307,7 +307,6 @@ footer {
     transform: translateY(-3px);
 }
 
-/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -318,7 +317,6 @@ footer {
     to { transform: translateY(0); opacity: 1; }
 }
 
-/* Responsive Design */
 @media (max-width: 968px) {
     .header-content {
         flex-direction: column;
