@@ -4,6 +4,7 @@ const PAGE_SIZE = 30;
 let filteredResults = [];
 let showingSearch = false;
 let isLoading = false;
+let fuse;
 
 // Elementos DOM
 const searchInput = document.getElementById('searchInput');
@@ -26,12 +27,42 @@ const openAboutButton = document.getElementById('openAbout');
 const toast = document.getElementById('toast');
 const backToTopBtn = document.getElementById("backToTop");
 
+// Função para inicializar o Fuse.js
+function initializeFuse() {
+    const options = {
+        keys: [
+            {
+                name: 'descricao',
+                weight: 0.6
+            },
+            {
+                name: 'codigo',
+                weight: 0.3
+            },
+            {
+                name: 'aplicacao',
+                weight: 0.1
+            }
+        ],
+        includeScore: true,
+        threshold: 0.4,
+        distance: 100,
+        ignoreLocation: true,
+        minMatchCharLength: 2
+    };
+    
+    fuse = new Fuse(cfopDatabase, options);
+}
+
 // Função para carregar JSON
 async function loadJson() {
     try {
         const response = await fetch('./src/assets/json/tabelaCFOP.json');
         const data = await response.json();
         cfopDatabase = data.CFOP;
+
+        // Inicializar Fuse.js com os dados
+        initializeFuse();
 
         totalCfopsElement.textContent = cfopDatabase.length.toLocaleString('pt-BR');
         lastUpdateElement.textContent = new Date().toLocaleDateString('pt-BR');
@@ -80,7 +111,7 @@ function loadMoreResults() {
 
 // Função para realizar a busca
 function performSearch() {
-    const searchTerm = searchInput.value.trim().toLowerCase();
+    const searchTerm = searchInput.value.trim();
     const searchType = document.querySelector('input[name="searchType"]:checked').value;
     
     resultsContainer.innerHTML = '';
@@ -94,21 +125,34 @@ function performSearch() {
         return;
     }
     
-    filteredResults = cfopDatabase.filter(item => {
-        const originalCode = item.codigo.toLowerCase();
-        
-        if (searchType === 'code') {
-            return originalCode.includes(searchTerm);
-        } else if (searchType === 'start') {
-            return item.descricao.toLowerCase().startsWith(searchTerm);
-        } else {
-            return (
-                item.descricao.toLowerCase().includes(searchTerm) ||
-                originalCode.includes(searchTerm) ||
-                (item.aplicacao && item.aplicacao.toLowerCase().includes(searchTerm))
-            );
-        }
-    });
+    let searchOptions = {};
+    
+    if (searchType === 'code') {
+        searchOptions = {
+            keys: ['codigo'],
+            threshold: 0.2,
+            shouldSort: true
+        };
+    } else if (searchType === 'start') {
+        filteredResults = cfopDatabase.filter(item => 
+            item.descricao.toLowerCase().startsWith(searchTerm.toLowerCase())
+        );
+        resultCountElement.textContent = filteredResults.length.toLocaleString('pt-BR');
+        loadMoreResults();
+        return;
+    } else {
+        searchOptions = {
+            keys: ['descricao', 'codigo', 'aplicacao'],
+            threshold: 0.4,
+            shouldSort: true
+        };
+    }
+    
+    // Aplicar busca com Fuse.js
+    const fuseInstance = new Fuse(cfopDatabase, searchOptions);
+    const searchResults = fuseInstance.search(searchTerm);
+    
+    filteredResults = searchResults.map(result => result.item);
     
     resultCountElement.textContent = filteredResults.length.toLocaleString('pt-BR');
     
