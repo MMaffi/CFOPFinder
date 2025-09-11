@@ -273,7 +273,7 @@ openHelpButton.addEventListener('click', (e) => {
 
 openAboutButton.addEventListener('click', (e) => {
     e.preventDefault();
-    showToast('CFOP Finder v1.0.0 - Sistema de consulta de códigos CFOP');
+    showToast('CFOP Finder - Sistema de consulta de códigos CFOP');
 });
 
 // Fechar modais
